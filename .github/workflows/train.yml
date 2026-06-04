@@ -1,28 +1,22 @@
 name: Train Model
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
   train:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+    - uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
 
-      - name: Install Dependencies
-        run: |
-          pip install mlflow pandas scikit-learn numpy matplotlib
+    - name: Install Dependencies
+      run: |
+        pip install pandas scikit-learn
 
-      - name: Run MLflow Project
-        run: |
-          cd MLProject
-          mlflow run .
+    - name: Run Model
+      run: |
+        python MLProject/modelling.py
