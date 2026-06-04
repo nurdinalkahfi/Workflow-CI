@@ -15,7 +15,7 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        pip install pandas scikit-learn
+        pip install pandas scikit-learn mlflow
 
     - name: Run Model
       run: |
