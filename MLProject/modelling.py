@@ -9,7 +9,7 @@ from sklearn.metrics import accuracy_score
 mlflow.autolog()
 
 # Load dataset
-df = pd.read_csv("MLProject/heart_preprocessing.csv")
+df = pd.read_csv("heart_preprocessing.csv")
 
 # Pisahkan fitur dan target
 X = df.drop("target", axis=1)
